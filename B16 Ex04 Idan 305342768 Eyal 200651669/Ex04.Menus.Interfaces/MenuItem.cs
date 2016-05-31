@@ -6,6 +6,8 @@ namespace Ex04.Menus.Interfaces
 {
     interface MenuItem
     {
+        void ReturnAction(bool i_IsMainMenu);
+
         string m_ItemName
         {
             get;
@@ -23,6 +25,10 @@ namespace Ex04.Menus.Interfaces
             get;
         }
 
-
+        MenuItem parentMenu
+        {
+            get;
+            set;
+        }
     }
 }
