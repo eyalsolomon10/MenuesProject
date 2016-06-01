@@ -79,7 +79,7 @@ namespace Ex04.Menus.Interfaces
             Console.Clear();
             int parsedInt = this.parseInput(input);
 
-            if (parsedInt != -1 && parsedInt != 0)
+            if ((parsedInt != -1 && parsedInt != 0))
             {
                 this.m_Menues[parsedInt - 1].Activate();
             }
