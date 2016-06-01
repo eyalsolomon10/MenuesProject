@@ -4,40 +4,27 @@ using System.Text;
 
 namespace Ex04.Menus.Interfaces
 {
-    class MainMenu : MenuItem
+    public class MainMenu
     {
-        public string m_ItemName
-        {
-            get
-            {
-                return m_ItemName;
-            }
+        private MenuItem m_MenuItem;
 
+        public MainMenu(MenuItem i_MenuItem)
+        {
+            m_MenuItem = i_MenuItem;
+        }
+
+        public MenuItem MenuItem
+        {
             set
             {
-                m_ItemName = value;
+                m_MenuItem = value;
             }
         }
 
-        public List<T> m_MenuItemsList
-        {
-            get
-            {
-                return m_MenuItemsList;
-            }
 
-            set
-            {
-                m_MenuItemsList = value;
-            }
-        }
-
-        public bool m_IsSubMenu
+        public void Show()
         {
-            get
-            {
-                return true;
-            }
+            m_MenuItem.Show();
         }
     }
 }

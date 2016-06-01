@@ -33,8 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Ex04.Menus.Interfaces">
+      <HintPath>..\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

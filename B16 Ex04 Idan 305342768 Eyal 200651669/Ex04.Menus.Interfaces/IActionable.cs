@@ -4,15 +4,8 @@ using System.Text;
 
 namespace Ex04.Menus.Interfaces
 {
-    interface ActionItem
+    public interface IActionable
     {
-        string m_ItemName
-        {
-            get;
-            set;
-        }
-
-
-
+        void DoAction();
     }
 }

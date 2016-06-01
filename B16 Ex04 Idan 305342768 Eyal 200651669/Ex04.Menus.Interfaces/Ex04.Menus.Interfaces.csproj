@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{138CA0B0-4AFA-4326-9258-89556BD11546}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ex04.Menus.Interfaces</RootNamespace>
     <AssemblyName>Ex04.Menus.Interfaces</AssemblyName>
@@ -31,11 +31,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ActionItem.cs" />
-    <Compile Include="ActionMethods.cs" />
+    <Compile Include="CountWordsAction.cs" />
+    <Compile Include="DateAction.cs" />
+    <Compile Include="IActionable.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="MenuItem.cs" />
+    <Compile Include="SpaceAction.cs" />
+    <Compile Include="TimeAction.cs" />
+    <Compile Include="VersionAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
