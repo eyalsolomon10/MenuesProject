@@ -54,6 +54,7 @@ namespace Ex04.Menus.Interfaces
         {
             while (true)
             {
+                Console.WriteLine(string.Format("*{0}*", m_Title));
                 Console.WriteLine("Please choose one of the below items:");
                 if (m_IsFirstMenu)
                 {
@@ -82,7 +83,6 @@ namespace Ex04.Menus.Interfaces
             input = Console.ReadLine();
             Console.Clear();
             int parsedInt = this.parseInput(input);
-
             if (parsedInt != -1 && parsedInt != 0)
             {
                 this.m_Menues[parsedInt - 1].Activate();

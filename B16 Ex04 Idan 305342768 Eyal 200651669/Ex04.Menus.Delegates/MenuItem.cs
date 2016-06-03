@@ -9,14 +9,11 @@ namespace Ex04.Menus.Delegates
     public class MenuItem
     {
         private List<MenuItem> m_Menues;
-
         private string m_Title;
-
         private bool m_IsAction;
-
         private bool m_IsFirstMenu;
 
-        public event Clicker m_Clicker; 
+        public event Clicker Clicked; 
 
         public MenuItem(List<MenuItem> i_Menues, string i_Title, bool i_IsFirst)
         {
@@ -30,7 +27,7 @@ namespace Ex04.Menus.Delegates
         {
             m_Menues = null;
             m_Title = i_Title;
-            m_Clicker += i_Clicker;
+            Clicked += i_Clicker;
             m_IsAction = true;
         }
 
@@ -48,6 +45,7 @@ namespace Ex04.Menus.Delegates
         {
             while (true)
             {
+                Console.WriteLine(string.Format("*{0}*", m_Title));
                 Console.WriteLine("Please choose one of the below items:");
                 if (m_IsFirstMenu)
                 {
@@ -84,9 +82,9 @@ namespace Ex04.Menus.Delegates
 
         protected virtual void OnClick()
         {
-            if (m_Clicker != null)
+            if (Clicked != null)
             {
-                m_Clicker.Invoke();
+                Clicked.Invoke();
             }
         }
 

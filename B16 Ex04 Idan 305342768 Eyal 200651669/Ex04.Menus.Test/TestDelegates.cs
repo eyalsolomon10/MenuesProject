@@ -10,18 +10,19 @@ namespace Ex04.Menus.Test
     {
         public static void Start()
         {
-            MenuItem showVersionItem = new MenuItem(new Clicker(buttonVersion_Click), "Show Version");
-            MenuItem countCharsItem = new MenuItem(new Clicker(buttonChar_Click), "Count Characters");
-            MenuItem countSpaces = new MenuItem(new Clicker(buttonSpace_Click), "Count Spaces");
-            MenuItem timeActionItem = new MenuItem(new Clicker(buttonTime_Click), "Show Time");
-            MenuItem dateActionItem = new MenuItem(new Clicker(buttonDate_Click), "Show Date");
+            const bool v_IsMainMenu = true;
+            MenuItem showVersionItem = new MenuItem(buttonVersion_Click, "Show Version");
+            MenuItem countCharsItem = new MenuItem(buttonChar_Click, "Count Characters");
+            MenuItem countSpaces = new MenuItem(buttonSpace_Click, "Count Spaces");
+            MenuItem timeActionItem = new MenuItem(buttonTime_Click, "Show Time");
+            MenuItem dateActionItem = new MenuItem(buttonDate_Click, "Show Date");
 
             List<MenuItem> actionsMenuList = new List<MenuItem>();
             actionsMenuList.Add(countCharsItem);
             actionsMenuList.Add(countSpaces);
-            MenuItem secondMenu = new MenuItem(actionsMenuList, "Actions", false);
+            MenuItem secondMenu = new MenuItem(actionsMenuList, "Actions", !v_IsMainMenu);
 
-            MenuItem versionActionsItem = new MenuItem(new List<MenuItem>(), "Version and actions", false);
+            MenuItem versionActionsItem = new MenuItem(new List<MenuItem>(), "Version and actions", !v_IsMainMenu);
             versionActionsItem.Add(showVersionItem);
             versionActionsItem.Add(secondMenu);
 
@@ -29,8 +30,8 @@ namespace Ex04.Menus.Test
             actionsMenuList.Add(dateActionItem);
             actionsMenuList.Add(timeActionItem);
 
-            MenuItem dateTimeActionsItem = new MenuItem(actionsMenuList, "Show Date/Time", false);
-            MenuItem mainMenuItem = new MenuItem(new List<MenuItem>(), "Main Menu", true);
+            MenuItem dateTimeActionsItem = new MenuItem(actionsMenuList, "Show Date/Time", !v_IsMainMenu);
+            MenuItem mainMenuItem = new MenuItem(new List<MenuItem>(), "Main Menu", v_IsMainMenu);
             mainMenuItem.Add(versionActionsItem);
             mainMenuItem.Add(dateTimeActionsItem);
             MainMenu mainMenu = new MainMenu(mainMenuItem);
