@@ -43,6 +43,9 @@
     <Compile Include="VersionAction.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Ex04.Menus.Delegates">
+      <HintPath>..\Ex04.Menus.Delegates\obj\Debug\Ex04.Menus.Delegates.dll</HintPath>
+    </Reference>
     <Reference Include="Ex04.Menus.Interfaces">
       <HintPath>..\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll</HintPath>
     </Reference>

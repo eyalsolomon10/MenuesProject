@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Ex04.Menus.Interfaces;
+
 namespace Ex04.Menus.Test
 {
     public class SpaceAction : IActionable
@@ -24,8 +25,8 @@ namespace Ex04.Menus.Test
                     letterCounter++;
                 }
             }
+
             Console.WriteLine(string.Format("There's {0} spaces in the given sentence", letterCounter));
         }
-
     }
 }

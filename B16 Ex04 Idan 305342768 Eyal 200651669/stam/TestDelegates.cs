@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Ex04.Menus.Test
 {
-    public class Program
+    public class TestDelegates
     {
-        public static void Main(string[] args)
+        public static void Start()
         {
-            Test.Start();
+
         }
     }
 }

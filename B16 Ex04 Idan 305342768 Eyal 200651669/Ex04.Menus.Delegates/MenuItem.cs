@@ -5,14 +5,18 @@ using System.Text;
 namespace Ex04.Menus.Delegates
 {
     public delegate void Clicker();
-
+    
     public class MenuItem
     {
         private List<MenuItem> m_Menues;
+
         private string m_Title;
+
         private bool m_IsAction;
+
         private bool m_IsFirstMenu;
-        private Clicker m_Clicker; 
+
+        public event Clicker m_Clicker; 
 
         public MenuItem(List<MenuItem> i_Menues, string i_Title, bool i_IsFirst)
         {
@@ -36,6 +40,7 @@ namespace Ex04.Menus.Delegates
             {
                 m_Menues = new List<MenuItem>();
             }
+
             m_Menues.Add(i_MenuItem);
         }
 
@@ -52,6 +57,7 @@ namespace Ex04.Menus.Delegates
                 {
                     Console.WriteLine("0: Back");
                 }
+
                 for (int i = 0; i < m_Menues.Count; i++)
                 {
                     Console.WriteLine(string.Format("{0}: {1}", i + 1, m_Menues[i].m_Title));
@@ -64,14 +70,33 @@ namespace Ex04.Menus.Delegates
             }
         }
 
+        public void Activate()
+        {
+            if (m_IsAction)
+            {
+                OnClick();
+            }
+            else
+            {
+                Show();
+            }
+        }
+
+        protected virtual void OnClick()
+        {
+            if (m_Clicker != null)
+            {
+                m_Clicker.Invoke();
+            }
+        }
+
         public int GetInputAndActivate()
         {
             string input = string.Empty;
             input = Console.ReadLine();
             Console.Clear();
             int parsedInt = this.parseInput(input);
-
-            if ((parsedInt != -1 && parsedInt != 0))
+            if (parsedInt != -1 && parsedInt != 0)
             {
                 this.m_Menues[parsedInt - 1].Activate();
             }
@@ -94,6 +119,7 @@ namespace Ex04.Menus.Delegates
                     toReturn = o_Result;
                 }
             }
+
             return toReturn;
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Ex04.Menus.Interfaces;
+
 namespace Ex04.Menus.Test
 {
     public class DateAction : IActionable
@@ -16,6 +17,5 @@ namespace Ex04.Menus.Test
         {
             Console.WriteLine(string.Format("Current date is: {0}", DateTime.Now.ToString("dd/MM/yyyy")));
         }
-
     }
 }

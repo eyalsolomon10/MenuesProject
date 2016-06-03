@@ -34,14 +34,17 @@ namespace Ex04.Menus.Interfaces
             {
                 m_Menues = new List<MenuItem>();
             }
+
             m_Menues.Add(i_MenuItem);
         }
+
         public void Activate()
         {
             if (m_IsAction)
             {
                 Action.DoAction();
-            } else
+            }
+            else
             {
                 Show();
             }
@@ -60,6 +63,7 @@ namespace Ex04.Menus.Interfaces
                 {
                     Console.WriteLine("0: Back");
                 }
+
                 for (int i = 0; i < m_Menues.Count; i++)
                 {
                     Console.WriteLine(string.Format("{0}: {1}", i + 1, m_Menues[i].m_Title));
@@ -79,7 +83,7 @@ namespace Ex04.Menus.Interfaces
             Console.Clear();
             int parsedInt = this.parseInput(input);
 
-            if ((parsedInt != -1 && parsedInt != 0))
+            if (parsedInt != -1 && parsedInt != 0)
             {
                 this.m_Menues[parsedInt - 1].Activate();
             }
@@ -95,12 +99,14 @@ namespace Ex04.Menus.Interfaces
         {
             int o_Result = 0;
             int toReturn = -1;
-            if (int.TryParse(i_Input, out o_Result)){
+            if (int.TryParse(i_Input, out o_Result))
+            {
                 if (o_Result <= m_Menues.Count && o_Result >= 0)
                 {
                     toReturn = o_Result;
                 }
-            }         
+            }
+
             return toReturn;
         }
     }

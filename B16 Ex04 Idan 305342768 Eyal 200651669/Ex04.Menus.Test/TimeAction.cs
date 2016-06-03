@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Ex04.Menus.Interfaces;
+
 namespace Ex04.Menus.Test
 {
     public class TimeAction : IActionable
     {
-
         public void DoAction()
         {
             ShowTime();
@@ -16,6 +14,5 @@ namespace Ex04.Menus.Test
         {
             Console.WriteLine(string.Format("Current time is: {0:HH:mm:ss tt}", DateTime.Now));
         }
-
     }
 }

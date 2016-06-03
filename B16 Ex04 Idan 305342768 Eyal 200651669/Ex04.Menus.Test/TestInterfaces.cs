@@ -7,7 +7,6 @@ namespace Ex04.Menus.Test
 {
     public class TestInterfaces
     {
-
         public static void Start()
         {
             VersionAction versionAction = new VersionAction();
@@ -40,7 +39,6 @@ namespace Ex04.Menus.Test
             MainMenu mainMenu = new MainMenu(mainMenuItem);
 
             mainMenu.Show();
-
         }
     }
 }
