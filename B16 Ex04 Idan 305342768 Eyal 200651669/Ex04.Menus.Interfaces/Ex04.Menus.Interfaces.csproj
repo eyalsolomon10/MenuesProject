@@ -35,14 +35,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CountWordsAction.cs" />
-    <Compile Include="DateAction.cs" />
     <Compile Include="IActionable.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="MenuItem.cs" />
-    <Compile Include="SpaceAction.cs" />
-    <Compile Include="TimeAction.cs" />
-    <Compile Include="VersionAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

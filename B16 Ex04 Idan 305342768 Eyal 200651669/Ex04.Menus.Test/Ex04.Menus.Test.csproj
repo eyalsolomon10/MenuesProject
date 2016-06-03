@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB7AA364-F687-4C64-9968-B14704BAE177}</ProjectGuid>
+    <ProjectGuid>{D4B0654D-7556-4141-B9F4-1E04B5E6AB09}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ex04.Menus.Test</RootNamespace>
@@ -32,14 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CountWordsAction.cs" />
+    <Compile Include="DateAction.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="SpaceAction.cs" />
     <Compile Include="Test.cs" />
+    <Compile Include="TestDelegates.cs" />
+    <Compile Include="TestInterfaces.cs" />
+    <Compile Include="TimeAction.cs" />
+    <Compile Include="VersionAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Ex04.Menus.Interfaces">
       <HintPath>..\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

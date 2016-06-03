@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
-namespace Ex04.Menus.Interfaces
+using Ex04.Menus.Interfaces;
+namespace Ex04.Menus.Test
 {
     public class TimeAction : IActionable
     {

@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ex04.Menus.Interfaces
+using Ex04.Menus.Interfaces;
+namespace Ex04.Menus.Test
 {
-    public class CountCharsAction : IActionable
+    public class SpaceAction : IActionable
     {
         public void DoAction()
         {
-            CharsCount();
+            SpacesCount();
         }
-
-        private static void CharsCount()
+        
+        private static void SpacesCount()
         {
             Console.WriteLine("Please enter a sentence:");
             string userInput = Console.ReadLine();
             int letterCounter = 0;
             foreach (char c in userInput)
             {
-                if (char.IsLetter(c))
+                if (char.IsWhiteSpace(c))
                 {
                     letterCounter++;
                 }
             }
-            Console.WriteLine(string.Format("There's {0} letters in the given sentence", letterCounter));
+            Console.WriteLine(string.Format("There's {0} spaces in the given sentence", letterCounter));
         }
+
     }
 }
